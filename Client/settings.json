@@ -1,0 +1,21 @@
+{
+	"general": {
+		"server": "random",
+		"channel": "BW",
+		"cache": "1",
+		"cache_type": "db",
+		"sensor": "0",
+		"timeout": "30",
+		"text_url_to_link": "1",
+		"noty": "bottomRight"
+	},
+	"app": {
+		"imgur": "0",
+		"gallery": "0",
+		"googl": "0",
+		"bookmark": "0",		
+		"filter": "0",
+		"track": "0"
+	}
+	
+}

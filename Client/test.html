@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HKG for Chrome</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link href='favicon.ico' rel='icon' type='image/x-icon'/>
+<!-- Le styles -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="js/editor/bootstrap-wysihtml5.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">HKG For Chrome</a>
+			<div class="btn-group pull-right">
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> <span id="username">CD-ROM</span><span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#" id="open_setting">Settings</a></li>
+					<li><a href="#" id="open_history">History</a></li>
+					<li><a href="#" id="debug_hash">Hash</a></li>
+					<li><a href="#" id="open_logged_server">Logged server</a></li>
+					<li class="divider"></li>
+					<li><a href="" id="login" data-action="login">Login</a></li>
+				</ul>
+			</div>
+			<div class="nav-collapse">
+			<ul class="nav">
+				<li class="">
+					<a id="nav_server" class="dropdown-toggle" data-toggle="dropdown" href="#">Server</a>
+					<ul id="switch_server" class="dropdown-menu">
+					<li><a href="#" data-server="1">Server 1</a></li>
+					<li><a href="#" data-server="2">Server 2</a></li>
+					<li><a href="#" data-server="3">Server 3</a></li>
+					<li><a href="#" data-server="4">Server 4</a></li>
+					<li><a href="#" data-server="5">Server 5</a></li>
+					<li><a href="#" data-server="6">Server 6</a></li>
+					<li><a href="#" data-server="7">Server 7</a></li>
+					<li><a href="#" data-server="8">Server 8</a></li>
+					<li><a href="#" data-server="9">Server 9</a></li>
+					<li><a href="#" data-server="10">Server 10</a></li>
+					<li><a href="#" data-server="11">Server 11</a></li>
+					</ul>
+				</li>
+				<li><a href="#search" id="search">Search</a></li>
+				<li><a href="#about" id="about">About</a></li>
+			</ul>
+			</div><!--/.nav-collapse -->
+			<div id="current_topic" style="float:left;line-height:1;padding:8px 20px 12px;color:#FFF;font-size:20px;">
+			</div>
+		</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+		<div class="span2">
+			<div class="well sidebar-nav">
+				<ul id="channel_list" class="nav nav-list">
+					<li class="nav-header">Channel</li>
+					<li><a href="#" data-type="ET">娛樂台</a></li>
+					<li><a href="#" data-type="CA">時事台</a></li>
+					<li><a href="#" data-type="FN">財經台</a></li>
+					<li><a href="#" data-type="gm">遊戲台</a></li>
+					<li><a href="#" data-type="HW">硬件台</a></li>
+					<li><a href="#" data-type="IN">寬頻台</a></li>
+					<li><a href="#" data-type="SW">軟件台</a></li>
+					<li><a href="#" data-type="MP">手機台</a></li>
+					<li><a href="#" data-type="SP">體育台</a></li>
+					<li><a href="#" data-type="LV">感情台</a></li>
+					<li><a href="#" data-type="SY">講故台</a></li>
+					<li><a href="#" data-type="ED">飲食台</a></li>
+					<li><a href="#" data-type="TR">旅遊台</a></li>
+					<li><a href="#" data-type="CO">潮流台</a></li>
+					<li><a href="#" data-type="AN">動漫台</a></li>
+					<li><a href="#" data-type="TO">玩具台</a></li>
+					<li><a href="#" data-type="MU">音樂台</a></li>
+					<li><a href="#" data-type="VI">影視台</a></li>
+					<li><a href="#" data-type="DC">攝影台</a></li>
+					<li><a href="#" data-type="ST">學術台</a></li>
+					<li><a href="#" data-type="TS">汽車台</a></li>
+					<li><a href="#" data-type="RA">電　台</a></li>
+					<li><a href="#" data-type="MB">站務台</a></li>
+					<li><a href="#" data-type="AC">自組活動台</a></li>
+					<li><a href="#" data-type="EP">創意台</a></li>
+					<li><a href="#" data-type="BW">吹水台</a></li>
+				</ul>
+			</div><!--/.well -->
+		</div><!--/span-->
+		<div class="span10">
+			<div class="main-header">
+				<ul id="breadcrumb" class="breadcrumb">
+				<li><a href="#" class="noline"><span id="current_server" class="label label-info">Server 1</span></a> <span class="divider">/</span></li>
+				<li id="current_channel" class="active">吹水台</li>
+				</ul><!-- #breadcrumb -->
+
+				<div id="operate">
+					<div class="item">
+						<img id="reload" src="img/reload.gif">
+					</div>
+				</div><!-- #operate -->
+			</div>
+
+			<div class="main-message">
+				<div class="alert">
+					<button class="close" data-dismiss="alert">×</button>
+					<strong>Warning!</strong> HKG for chrome is read only now
+				</div>
+			</div>
+			<div class="main-body">
+				<div id="tabs">
+					<ul class="nav nav-pills">
+					<li class="active"><a href="#">Topic</a></li>
+					<li id="tabs_dropdown" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="topic_title"></span><b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li class="empty"><a href="#">No topic</a></li>
+						</ul>
+					</li>
+					</ul>
+					<div id="tabs_option" class="pull-right">
+						<button id="open_post" class="btn btn-info">Post</button>
+					</div>
+				</div>
+
+				<div id="tab_loading" class="large_loading">
+					<img src="img/large_loading.gif">
+				</div>
+				
+				<div id="tab_topic">
+					<table id="topic_table" class="table table-bordered">
+					<thead>
+					<tr>
+					<th width="">Topic</th>
+					<th width="120">Author</th>
+					<th width="140">Date</th>
+					<th width="50">Replies</th>
+					<th width="50">Score</th>
+					</tr>
+					</thead>
+					<tbody>
+					</tbody>
+					</table>
+				</div>
+				
+			</div><!-- .main-body -->
+			<div class="main-footer">
+			</div>
+		</div><!--/span-->
+		</div><!--/row-->
+		<hr>
+		<footer>
+		<p>corada@gmail.com</p>
+		</footer>
+	</div><!--/.fluid-container-->
+
+	<!-- scroll top -->
+	<div id="bottom_toolbar">
+		<button class="btn" id="scroll_top"><i class="icon-circle-arrow-up"></i></button>
+		<button class="btn hide" id="back_topic"><i class="icon-share-alt rotate180"></i></button>
+		<button class="btn" id="page_reload"><i class="icon-refresh"></i></button>
+		<button class="btn hide" id="reply_topic"><i class="icon-comment"></i></button>
+		<button class="btn hide" id="page_close"><i class="icon-remove"></i></button>
+		<button class="btn" id="scroll_down"><i class="icon-circle-arrow-down"></i></button>
+	</div>
+	
+	<!-- setting box -->
+	<div id="setting_box" class="modal hide fade">
+		<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3>Settings</h3>
+		</div>
+		<div class="modal-body">
+			<ul id="setting_tab" class="nav nav-tabs">
+			<li class="active" data-value="general">
+			<a href="#">General</a>
+			</li>
+			<li data-value="app"><a href="#">App</a></li>
+			<li data-value="verify"><a href="#">Verify</a></li>
+			</ul>
+			<form>
+			<table id="general_setting" class="table table-bordered">
+				<tbody>
+				<tr><td>Server</td><td>
+				<div class="btn-group">
+					<a class="btn dropdown-toggle combobox" data-toggle="dropdown" href="#">
+					<span class="text">Random</span>
+					<span class="caret"></span>
+					<input type="hidden" id="setting_server" name="general[server]" value="random" />
+					</a>
+					<ul class="dropdown-menu" style="height:100px;overflow-y:scroll;">
+					<li value="random"><a href="#">Random</a></li>
+					<li data-value="1"><a href="#">1</a></li>
+					<li data-value="2"><a href="#">2</a></li>
+					<li data-value="3"><a href="#">3</a></li>
+					<li data-value="4"><a href="#">4</a></li>
+					<li data-value="5"><a href="#">5</a></li>
+					<li data-value="6"><a href="#">6</a></li>
+					<li data-value="7"><a href="#">7</a></li>
+					<li data-value="8"><a href="#">8</a></li>
+					<li data-value="9"><a href="#">9</a></li>
+					<li data-value="10"><a href="#">10</a></li>
+					<li data-value="11"><a href="#">11</a></li>
+					</ul>
+				</div>
+				</td></tr>
+				<tr><td>Channel</td><td>
+				<div class="btn-group">
+					<a class="btn dropdown-toggle combobox" data-toggle="dropdown" href="#">
+					<span class="text">吹水台</span>
+					<span class="caret"></span>
+					<input type="hidden" id="setting_channel" name="general[channel]" value="BW" />
+					</a>
+					<ul id="dropdown_channel" class="dropdown-menu" style="height:100px;overflow-y:scroll;">
+					</ul>
+				</div>
+				</td></tr>
+				<tr><td>Local cache</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-ok"></i></button>
+				<input type="hidden" name="general[cache]" value="1" />
+				</td></tr>
+				<tr><td>Sensor</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="general[sensor]" value="0" />
+				</td></tr>
+				<tr><td>Background open</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="general[bgopen]" value="0" />
+				</td></tr>
+				<tr><td>Timeout (Seconds)</td><td>		
+				<input type="number" name="general[timeout]" value="30" class="input-small" />
+				</td></tr>
+				<tr><td>Text Plain url to link</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-ok"></i></button>		
+				<input type="hidden" name="general[text_url_to_link]" value="1" />
+				</td></tr>
+				<tr><td>Notify position</td><td>
+				<div class="btn-group dropup">
+					<a class="btn dropdown-toggle combobox" data-toggle="dropdown" href="#">
+					<span class="text">Bottom Right</span>
+					<span class="caret"></span>
+					<input type="hidden" id="setting_noty" name="general[noty]" value="bottomRight" />
+					</a>
+					<ul class="dropdown-menu" style="height:100px;overflow-y:scroll;">
+					<li data-value="bottomRight"><a href="#">Bottom Right</a></li>
+					<li data-value="bottomLeft"><a href="#">Bottom Left</a></li>
+					<li data-value="bottomCenter"><a href="#">Bottom Center</a></li>
+					<li data-value="topRight"><a href="#">Top Right</a></li>
+					<li data-value="topLeft"><a href="#">Top Left</a></li>
+					<li data-value="topCenter"><a href="#">Top Center</a></li>
+					</ul>
+				</div>
+				</td></tr>
+				<tr><td>Theme</td><td>
+				<div class="btn-group dropup">
+					<a class="btn dropdown-toggle combobox" data-toggle="dropdown" href="#">
+					<span class="text">Default</span>
+					<span class="caret"></span>
+					<input type="hidden" id="setting_noty" name="general[noty]" value="bottomRight" />
+					</a>
+					<ul class="dropdown-menu" style="height:100px;overflow-y:scroll;">
+					<li data-value="default"><a href="#">Default</a></li>
+					</ul>
+				</div>
+				</td></tr>
+				</tbody>
+			</table>
+			<table id="app_setting" class="table table-bordered hide">
+				<tbody>
+				<tr><td>Imgur</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="app[imgur]" value="0" />
+				</td></tr>
+				<tr><td>Gallery</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="app[gallery]" value="0" />
+				</td></tr>
+				<tr><td>Image Downloader</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="app[downloader]" value="0" />
+				</td></tr>
+				<tr><td>Googl shorten</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="app[googl]" value="0" />
+				</td></tr>
+				<tr><td>Bookmark</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="app[bookmark]" value="0" />
+				</td></tr>
+				<tr><td>Filter</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="app[filter]" value="0" />
+				</td></tr>
+				<tr><td>Track post</td><td>
+				<button class="chkbox btn btn-mini"><i class="icon-remove"></i></button>
+				<input type="hidden" name="app[track]" value="0" />
+				</td></tr>
+				</tbody>
+			</table>
+			<table id="verify_setting" class="table table-bordered hide">
+				<tbody>
+				<tr><td>Username</td><td><span id="verify_username"></span></td></tr>
+				<tr><td>Key</td><td><span id="verify_key"></span></td></tr>
+				<tr><td>Status</td><td><span id="verify_status" class="label label-important"></span></td></tr>
+				<tr><td>Date</td><td><span id="verify_date"></span></td></tr>
+				<tr><td>Extension version</td><td><span id="verify_version"></span></td></tr>
+				</tbody>
+			</table>
+			</form>
+		</div>
+		<div class="modal-footer">
+		<a href="#" class="btn btn-primary" id="save_setting">Save</a>
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery.timeago.js"></script>
+	<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/noty/jquery.noty.js"></script>
+	<script type="text/javascript" src="js/noty/layouts/all.min.js"></script>
+	<script type="text/javascript" src="js/noty/themes/default.js"></script>
+	<script type="text/javascript" src="js/jquery.dateFormat.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/storage.js"></script>
+	<script type="text/javascript" src="js/hkgfc.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bootbox.js"></script>
+	<script type="text/javascript" src="js/jquery.dragndrop.js"></script>
+	
+	<div style="height:300px;border:1px solid #CCC;">HEIGHT</div>
+	<a href="http://baidu.com" class="popup">baidu.com</a>
+	
+	<style>
+	/*.dragdiv{
+        	width:200px;
+        	background-color:#EFF7FF;
+            border:1px solid #96C2F1;
+            position:absolute;
+            left:100px;
+            top:100px;
+	}*/
+	
+        .dragDiv
+        {
+        	width:200px;
+        	background-color:#EFF7FF;
+            border:1px solid #96C2F1;
+            position:absolute;
+            left:100px;
+            top:100px;
+        	}
+        .dragDiv h5
+        {
+        	background-color:#B2D3F5;
+        	padding:5px;
+            margin:1px;
+        	}
+        .dragDiv div
+        {
+        	padding:5px;
+        	margin-bottom:10px;
+            }
+
+	</style>
+	<div id="d" class="dragdiv">
+		<div class="modal-header">header</div>
+		<div class="modal-body">body</div>
+	</div>
+	
+<div class="dragDiv">
+    <h5 class="handler">Drag me</h5>
+    <div class="content">Yes, it is.</div>
+</div>
+
+	<script>
+		$("body").ready(function(){
+			var html='<div class="tcenter"><iframe id="iframe" src="http://www.baidu.com" width="100%" height="100%" frameborder="0" hspace="0" class=""></iframe></div>';
+			//var b=bootbox.modal(html,'iframe',{fullscreen: true, offset: 10});
+			
+			//bootbox.modal('Message','text',{width: 200, height:100, position: 'topRight'});
+			var b=bootbox.modal('Message','drag',{backdrop: false, draggable: true});
+			/*$("#d").Drags({
+                handler: '.modal-header',
+            });*/
+			//console.log(b.element());
+			//console.log(b.fullscreen({offset:10}));
+			
+		});
+		
+		
+        $().ready(function() {
+            $('.dragDiv').Drags({
+                handler: '.handler',
+                onMove: function(e) {
+                    $('.content').html('Div Position:(Left:' + e.pageX + ' ,Top:' + e.pageY + ')');
+                },
+                onDrop:function(e){
+                    $('.content').html('dropped!');
+                }
+            });
+        });
+
+	</script>
+</body>
+</html>

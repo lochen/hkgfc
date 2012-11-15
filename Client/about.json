@@ -1,0 +1,13 @@
+{
+	"version": "1.0",
+	"license": "MIT",
+	"date": "2012-07",
+	"title": "HKG For Chrome",
+	"content": "<p>HKGFC是一個基於HTML5 + CSS3 + AJAX編寫的高登討論區新界面</p><p>HKG個界面唔好睇，大陸網咁堆埋一齊，依家Web2.0 HTML5時代啦</p><p>雖然有巴打整咗plugin，功能很多，但界面的調較始終唔係太好，所以就自己攪過個</p><p>高登Server不嬲都廢廢地，又無端端維護，仲衰過D game server，D game server都會話你聽幾時維護</p><p>死Server會load唔到，load唔到就換Server試下</p><p>主要功能唔多，因為好多都簡化咗冇咗</p><p>暫時只可以讀不可以回或發POST</p>",
+	"list": [
+		{"title":"Requirement","item":["Chrome version > 11","Chrome permission: cookies, tabs","Resolution 1024x768 or above"]},
+		{"title":"Feature (v1.0)","item":["Random server","Topic tabs","Topic read/unread","Switch channel","Switch page","Thread time ago","Thread number","ensor filter ON/OFF","Local icons","No Ad","Link open with new browser tab","Image display resize width 80%(More than 500px)"]},
+		{"title":"Planning","item":["Post/Reply","Filter","Bookmark","Cache","Gallery","Apps"]},
+		{"title":"Libaray","item":["<a href=\"http://www.jquery.com\" target=\"_blank\">jQuery (v1.7) (License: MIT)","<a href=\"http://twitter.github.com/bootstrap\" target=\"_blank\">Bootstrap (v2.0.4) (License: Apache License v2.0)","<a href=\"http://flesler.blogspot.com/2007/10/jqueryscrollto.html\" target=\"_blank\">jQuery.scrollTo (v1.4.2) (License: MIT and GPL)","<a href=\"http://timeago.yarp.com\" target=\"_blank\">jQuery.timeago (v0.10.0) (License: MIT)","<a href=\"https://github.com/carhartl/jquery-cookie\" target=\"_blank\">jQuery.cookie (v1.1) (License: MIT and GPL)","<a href=\"http://needim.github.com/noty/\" target=\"_blank\">jQuery.noty (v2.0.3) (License: MIT)"]}
+	]
+}
